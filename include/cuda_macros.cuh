@@ -24,7 +24,6 @@
 #ifdef NDEBUG
 #include <cstdio>
 #include <cstdlib>
-#include <cuda_runtime.h>
 #define CUDA_CHECK(call)                                                       \
   do {                                                                         \
     cudaError_t err = (call);                                                  \
