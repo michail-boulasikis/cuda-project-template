@@ -26,7 +26,7 @@ In order to showcase the most common CMake and CUDA patterns, this template has 
 - Executable `vec-adder` inside the `tools` directory links against these two libraries and makes use of them.
 
 The CMakeLists.txt in this project have comments on every line giving thorough explanations of what is going on.
-I have written them with the expectation that you will start by looking into the [top level CMakeLists.txt](CMakeLists.txt). Then I recommend looking into the [CPU library CMakeLists.txt](lib/hostutils/CMakeLists.txt), then the [GPU library CMakeLists.txt](lib/kernels/CMakeLists.txt) and finally [the executable CMakeLists.txt][tools/vec-adder/CMakeLists.txt]. The CMakeLists.txt which are under the `lib/` and `tools/` directories just include the subdirectories below them.
+I have written them with the expectation that you will start by looking into the [top level CMakeLists.txt](CMakeLists.txt). Then I recommend looking into the [CPU library CMakeLists.txt](lib/hostutils/CMakeLists.txt), then the [GPU library CMakeLists.txt](lib/kernels/CMakeLists.txt) and finally [the executable CMakeLists.txt](tools/vec-adder/CMakeLists.txt). The CMakeLists.txt which are under the `lib/` and `tools/` directories just include the subdirectories below them.
 The `include/` folder does not have a CMakeLists.txt; this is normal, as these are simply header files which are included as text in the source files.
 
 I hope you learn something through this template!
