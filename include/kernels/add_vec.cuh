@@ -1,7 +1,7 @@
 #ifndef KERNELS_ADD_VEC_CUH
 #define KERNELS_ADD_VEC_CUH
 #include <cstddef>
-#include <cuda_macros.hpp>
+#include <cuda_macros.cuh>
 
 namespace gpu {
 

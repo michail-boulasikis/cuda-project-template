@@ -29,4 +29,7 @@ The CMakeLists.txt in this project have comments on every line giving thorough e
 I have written them with the expectation that you will start by looking into the [top level CMakeLists.txt](CMakeLists.txt). Then I recommend looking into the [CPU library CMakeLists.txt](lib/hostutils/CMakeLists.txt), then the [GPU library CMakeLists.txt](lib/kernels/CMakeLists.txt) and finally [the executable CMakeLists.txt](tools/vec-adder/CMakeLists.txt). The CMakeLists.txt which are under the `lib/` and `tools/` directories just include the subdirectories below them.
 The `include/` folder does not have a CMakeLists.txt; this is normal, as these are simply header files which are included as text in the source files.
 
+A subtle problem that arises when making GPU libraries is that you cannot simply include the headers to your consuming executable, unless you compile the executable with a CUDA compiler as well. Why? Because when you include the GPU library's headers, you also include the kernel declarations, which contain things like `__global__` or CUDA device calls which the host compiler doesn't understand.
+For a solution to this problem and its explanation, take a look at how the kernel in [add_vec.cuh](include/kernels/add_vec.cuh) is declared, and the [cuda_macros.cuh](include/cuda_macros.cuh) file.
+
 I hope you learn something through this template!
