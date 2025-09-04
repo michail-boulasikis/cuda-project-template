@@ -14,7 +14,6 @@
 #ifdef NDEBUG
 #include <cstdio>
 #include <cstdlib>
-#include <cublas_v2.h>
 #include <cuda_runtime.h>
 #define CUDA_CHECK(call)                                                       \
   do {                                                                         \
@@ -25,19 +24,8 @@
       std::exit(EXIT_FAILURE);                                                 \
     }                                                                          \
   } while (0)
-
-#define CUBLAS_CHECK(call)                                                     \
-  do {                                                                         \
-    cublasStatus_t err = (call);                                               \
-    if (err != CUBLAS_STATUS_SUCCESS) {                                        \
-      std::fprintf(stderr, "cuBLAS Error %d (%s:%d)\n", err, __FILE__,         \
-                   __LINE__);                                                  \
-      std::exit(EXIT_FAILURE);                                                 \
-    }                                                                          \
-  } while (0)
 #else
 #define CUDA_CHECK(call) (call)
-#define CUBLAS_CHECK(call) (call)
 #endif
 
 #endif // CUDA_MACROS_HPP
